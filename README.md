@@ -9,10 +9,9 @@
    ```
    ​
 ## Running the Application
-1. Install the rerun gem: `gem install rerun`
 
-2. ```
-   rerun 'bundle exec ruby app.rb'
+1. ```
+   bundle exec ruby app.rb
    ```
    ​
 
