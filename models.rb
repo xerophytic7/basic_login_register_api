@@ -20,6 +20,14 @@ class User
     	return self.password == password
     end
 end
+class Task
+  include DataMapper::Resource
+  property :id, Serial
+  property :user_id, Integer
+  property :text, Text 
+  property :completed, Boolean, default => false
+end
+
 
 # Perform basic sanity checks and initialize all relationships
 # Call this when you've defined all your models
@@ -27,3 +35,4 @@ DataMapper.finalize
 
 # automatically create the post table
 User.auto_upgrade!
+Task.auto_upgrade!
