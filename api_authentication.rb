@@ -89,5 +89,6 @@ end
 
 get "/api/token_check" do
 	api_authenticate!
+	
 	return {"message": "Valid Token"}.to_json
 end
