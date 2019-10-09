@@ -25,7 +25,8 @@ class Task
   property :id, Serial
   property :user_id, Integer
   property :text, Text 
-  property :completed, Boolean, default => false
+  property :completed, Boolean, default: false
+  property :created_at, DateTime
 end
 
 
