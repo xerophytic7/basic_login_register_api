@@ -27,7 +27,7 @@ post "/tasks/add" do
 		task.user_id = current_user.id
 		task.text = newTask
 		task.save
-		halt 201, {"message": "New task added"}.to_json
+		halt 201, task.to_json #change to: task.to_json
 	else
 		halt 400, {"message": "Task body missing"}
 	end
@@ -47,7 +47,10 @@ patch "/task/edit/:task_id" do
 				task.save
 				if completed == "true"
 					task.completed = true
+				elsif completed == "false"
+					task.completed = false
 				end
+				halt 200, task.to_json
 			else
 				halt 401, {message: "You are unauthorized to modify this task"}.to_json
 			end
