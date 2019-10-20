@@ -12,9 +12,7 @@ get "/tasks/" do
 	api_authenticate!
 	tasks = Task.all(user_id: current_user.id)
 	if tasks
-		return posts.to_json
-	else
-		halt 404, {message: "User not found"}.to_json
+		return tasks.to_json
 	end
 end
 #create
